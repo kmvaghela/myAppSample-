@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .intl-tel-input {
+            display: table-cell;
+        }
+
+        .intl-tel-input .selected-flag {
+            z-index: 4;
+        }
+
+        .intl-tel-input .country-list {
+            z-index: 5;
+        }
+
+        form {
+            margin-top: 60px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container d-lg-flex align-items-center justify-content-center">
+
+        <form class="needs-validation" novalidate>
+
+            <div class="form-group ">
+                <label for="fname" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="First Name" placeholder="Enter First Name" name="First Name"
+                    required>
+                <div class="invalid-feedback">
+                    Please provide a first name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lname" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="Last Name" placeholder="Enter Last Name" name="Last Name"
+                    required>
+                <div class="invalid-feedback">
+                    Please provide your last name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age" class="form-label">Age:</label>
+                <input type="text" class="form-control" id="age" placeholder="Enter age" name="age" required>
+                <div class="invalid-feedback">
+                    Please provide your Age.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                <div class="invalid-feedback">
+                    Please provide your Email Address.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label" data-fv-phone-country11="IN">Phone:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+                <div class="invalid-feedback">
+                    Please provide your Phone Number.
+                </div>
+            </div>
+
+            <div class=" mt-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="Reset" class="btn btn-primary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+
+                        }
+                        form.classList.add('was-validated')
+
+
+                    }, false)
+
+                })
+
+        })()
+
+        $("input").intlTelInput({
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
+        });
+
+        function myfunction1() {
+
+            var fname = document.getElementById('First Name').value;
+            var ln = document.getElementById('Last Name').value;
+            var age = document.getElementById('age').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            console.log("hello");
+            document.write('<h1>Your Entered Data Is :</h1>' + '<br><br><br>');
+            document.write('<strong>Full Name :' + " " + fname + " " + ln + '</strong><br><br>');
+            document.write('<strong>Age :' + " " + age + '</strong><br><br>');
+            document.write('<strong>Email Address :' + " " + email + '</strong><br><br>');
+            document.write('<strong>Phone :' + " " + phone + '</strong><br><br>');
+
+
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
